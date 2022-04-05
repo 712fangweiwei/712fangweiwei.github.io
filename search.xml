@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>实用网站（1）</title>
+      <link href="/2022/04/05/2022-4-5-03/"/>
+      <url>/2022/04/05/2022-4-5-03/</url>
+      
+        <content type="html"><![CDATA[<h2 id="PPT"><a href="#PPT" class="headerlink" title="PPT"></a>PPT</h2><p>优品模板 <a href="https://www.ypppt.com/">https://www.ypppt.com/</a><br>微软模板 <a href="https://www.officeplus.cn/">https://www.officeplus.cn/</a><br>51模板 <a href="http://www.51pptmoban.com/ppt/">http://www.51pptmoban.com/ppt/</a></p><h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><p>字节跳动 <a href="https://iconpark.oceanengine.com/home">https://iconpark.oceanengine.com/home</a><br>阿里巴巴 <a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>找字网 <a href="http://www.zhaozi.cn/">http://www.zhaozi.cn/</a><br>优优网 <a href="https://uiiiuiii.com/tool/typeface">https://uiiiuiii.com/tool/typeface</a><br>猫啃网 <a href="https://www.maoken.com/all-fonts-imgs">https://www.maoken.com/all-fonts-imgs</a></p><p>刑，先找到这吧</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用网站 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 实用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>开发Bug一览</title>
+      <link href="/2022/04/05/2022-4-5-02/"/>
+      <url>/2022/04/05/2022-4-5-02/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、无关紧要-主要是我不拘小节"><a href="#一、无关紧要-主要是我不拘小节" class="headerlink" title="一、无关紧要(主要是我不拘小节)"></a>一、无关紧要(主要是我不拘小节)</h2><h3 id="1-github"><a href="#1-github" class="headerlink" title="1.github"></a>1.github</h3><p>最最最最烦的就是这个（同性交友网站）实在是太 慢 了！<br>连接时断时续<br>也不算bug吧 反正就是挺恶心的<br>网上办法倒是挺多，但主流的hosts实在不稳定。。。<br>其他方法又太麻烦，我这么一个简洁（怕麻烦）的人自然不可能将就<br>So, 就这样得了</p><h3 id="2-The-authenticity-of-host-‘github-com-140-82-113-4-’-can’t-be-established"><a href="#2-The-authenticity-of-host-‘github-com-140-82-113-4-’-can’t-be-established" class="headerlink" title="2.The authenticity of host ‘github.com (140.82.113.4)’ can’t be established."></a>2.The authenticity of host ‘github.com (140.82.113.4)’ can’t be established.</h3><p>SSH生成密钥的时候报的，一个无关紧要的bug，大意就是缺少一个密钥。<br>百度了一下解决方法，如下：<br>这是因为少了一个known_hosts文件，本来密钥文件应该是三个，现在是两个，便报了这样的错误，此时选择yes回车之后，便可，同时生成了缺少了的known_hosts文件：<br>Are you sure you want to continue connecting (yes/no)? //输入yes，回车<br>——————<br>版权声明：本文为CSDN博主「武东10号」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/Wbiokr/article/details/73431199">https://blog.csdn.net/Wbiokr/article/details/73431199</a></p><h2 id="二、翻来覆去（多半是我不行）"><a href="#二、翻来覆去（多半是我不行）" class="headerlink" title="二、翻来覆去（多半是我不行）"></a>二、翻来覆去（多半是我不行）</h2><h3 id="1-OpenSSL-SSL-read-Connection-was-reset-errno-10054"><a href="#1-OpenSSL-SSL-read-Connection-was-reset-errno-10054" class="headerlink" title="1.OpenSSL SSL_read: Connection was reset, errno 10054"></a>1.OpenSSL SSL_read: Connection was reset, errno 10054</h3><p>（在hexo d还是啥的时候碰到这个问题 反正解决方法都一样）<br>（好吧是我没记住）<br>网上有的说连接超时，我试了一下不管用。。<br>又翻了一篇文章，说要打开Git命令页面，执行git命令脚本：修改设置，解除ssl验证<br>也就是执行 git config –global http.sslVerify “false”<br>但是如故。<br>仔细找了很久，才发现多打了个~号。。。<br>但接下来哪一步的时候再度报错。<br>网上说不能加双引号（记不得哪篇帖子了），这才完全解决。</p><h3 id="2-hexo-d"><a href="#2-hexo-d" class="headerlink" title="2.hexo d"></a>2.hexo d</h3><p>这一步的时候，弹出一个GitHub登录窗口<br>我以为是我点了什么 顺手关掉了。。。。<br>几秒钟以后又弹了一个。。。。。<br>我这才反应过来，输了账号密码<br>然后的然后就报错了:remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.<br>大概意思就是你原先的密码凭证从2021年8月13日开始就不能用了，必须使用个人访问令牌（personal access token），就是把你的密码替换成token！<br>经过<br><a href="https://blog.csdn.net/weixin_41010198/article/details/119698015">https://blog.csdn.net/weixin_41010198/article/details/119698015</a><br>上的一番操作，我才发现。。。只要用之前那个被我关掉的登录框就行了<br>也就是我白整了这么多……<br>果然，bug是看人的</p><h3 id="3-hexo-new-balabala"><a href="#3-hexo-new-balabala" class="headerlink" title="3.hexo new balabala"></a>3.hexo new balabala</h3><p>……这是真的无语了<br>可能是sublime text的原因<br>编辑了一下post.md(默认文档)<br>然后就报错了<br>找了半天，最后用page.md的内容替换了一下 解决了</p><p>刑，就这样！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> BUG </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>……不想取题目</title>
+      <link href="/2022/04/05/2022-4-5-01/"/>
+      <url>/2022/04/05/2022-4-5-01/</url>
+      
+        <content type="html"><![CDATA[<h1 id="之前"><a href="#之前" class="headerlink" title="之前"></a>之前</h1><p>其实好像几年前我也整过这玩意，后来没啥毅力做下去了。。。<br>现在换了个好看亿点的模板，勉强做着看看，指不定啥时候用到</p><h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>不过做的时候bug是真多<br>两个小时就整了个勉强能看的界面<br>行，继续完善去了！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 个人随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随便吧啦吧啦 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Helloworld</title>
+      <link href="/2022/04/04/helloworld/"/>
+      <url>/2022/04/04/helloworld/</url>
+      
+        <content type="html"><![CDATA[<h2 id="好不容易整到这"><a href="#好不容易整到这" class="headerlink" title="好不容易整到这"></a>好不容易整到这</h2><h2 id="剩下的明天再说吧"><a href="#剩下的明天再说吧" class="headerlink" title="剩下的明天再说吧"></a>剩下的明天再说吧</h2><h2 id="Good-night"><a href="#Good-night" class="headerlink" title="Good night!"></a>Good night!</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 个人随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随便吧啦吧啦 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
